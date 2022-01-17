@@ -1,19 +1,29 @@
-import React from 'react';
-
-const listings = [
-  {
-    type: "Townhouse",
-    address: "123 Avenue",
-    city: "San Fran",
-    price: 1280,
-    bedrooms: 2,
-    bathrooms: 1,
-    sqaure_footage: 1200}
-];
+import { useState } from 'react';
 
 
 const ListingSearch = () => {
-  return <div> It's wired up </div>
+  const [listings, setListings] = useState([
+    {
+      type: "Townhouse",
+      address: "123 Avenue",
+      city: "San Fran",
+      price: 1280,
+      bedrooms: 2,
+      bathrooms: 1,
+      square_footage: 1200,}
+  ]);
+
+  return <div>
+
+          {listings && listings.map(listing =>
+            <div>
+              <p>HouseType {listing.type} - Address: {listing.address},{listing.city}</p>
+              <p>${listing.price}/monthly - {listing.square_footage}sq/ft</p>
+              <p>Bedrooms:{listing.bedrooms} Bathrooms:{listing.bathrooms}</p>
+            </div>
+          )}
+
+        </div>
 };
 
 export default ListingSearch;
