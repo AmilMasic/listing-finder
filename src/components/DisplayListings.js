@@ -10,3 +10,5 @@ function DisplayListings({listing}) {
     </div>
   )
 }
+
+export default DisplayListings;
