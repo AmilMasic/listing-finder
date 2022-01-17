@@ -3,13 +3,16 @@ import React from 'react';
 import DisplayListings from './DisplayListings';
 
 
-const ListingSearch = ({listingsToSearch}) => {
+function ListingSearch({listingsToSearch}) {
+
+
   const listings = listingsToSearch.map(
     listing =>
       < DisplayListings
         key={listing.id}
         listing={listing}
       />)
+
 
   return (
     <div>
